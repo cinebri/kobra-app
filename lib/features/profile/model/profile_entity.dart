@@ -53,6 +53,11 @@ class SubscriptionInfo with _$SubscriptionInfo {
     required DateTime expire,
     String? webPageUrl,
     String? supportUrl,
+    // KOBRA-specific fields from kobra-* subscription response headers
+    String? renewUrl,
+    String? serviceName,
+    String? serviceLogoUrl,
+    String? themeColor,
   }) = _SubscriptionInfo;
 
   bool get isExpired => expire <= DateTime.now();

@@ -2,17 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 abstract class Constants {
-  static const appName = "Hiddify";
-  static const githubUrl = "https://github.com/hiddify/hiddify-next";
-  static const licenseUrl = "https://github.com/hiddify/hiddify-next?tab=License-1-ov-file#readme";
-  static const githubReleasesApiUrl = "https://api.github.com/repos/hiddify/hiddify-next/releases";
-  static const githubLatestReleaseUrl = "https://github.com/hiddify/hiddify-app/releases/latest";
-  static const appCastUrl = "https://raw.githubusercontent.com/hiddify/hiddify-next/main/appcast.xml";
-  static const telegramChannelUrl = "https://t.me/hiddify";
-  static const privacyPolicyUrl = "https://hiddify.com/privacy-policy/";
-  static const termsAndConditionsUrl = "https://hiddify.com/terms/";
+  static const appName = "KOBRA VPN";
+  static const githubUrl = "https://github.com/cinebri/kobra-app";
+  static const licenseUrl = "https://github.com/cinebri/kobra-app?tab=License-1-ov-file#readme";
+  static const githubReleasesApiUrl = "https://api.github.com/repos/cinebri/kobra-app/releases";
+  static const githubLatestReleaseUrl = "https://github.com/cinebri/kobra-app/releases/latest";
+  static const appCastUrl = "https://raw.githubusercontent.com/cinebri/kobra-app/main/appcast.xml";
+  static const telegramChannelUrl = "https://t.me/kobraink_support_bot";
+  static const privacyPolicyUrl = "https://kobra.ink/legal/privacy";
+  static const termsAndConditionsUrl = "https://kobra.ink/legal/terms";
   static const cfWarpPrivacyPolicy = "https://www.cloudflare.com/application/privacypolicy/";
   static const cfWarpTermsOfService = "https://www.cloudflare.com/application/terms/";
+
+  // KOBRA subscription header names (parsed from Remnawave response headers)
+  static const kobraHeaderRenewUrl = "kobra-renew-url";
+  static const kobraHeaderServiceName = "kobra-service-name";
+  static const kobraHeaderServiceLogo = "kobra-service-logo";
+  static const kobraHeaderThemeColor = "kobra-theme-color";
+  static const kobraHeaderSupportUrl = "kobra-support-url";
 }
 
 const kAnimationDuration = Duration(milliseconds: 250);

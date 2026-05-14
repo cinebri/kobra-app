@@ -47,6 +47,12 @@ class ProfileParser {
     'profile-web-page-url',
     'enable-warp',
     'enable-fragment',
+    // KOBRA: custom headers from Remnawave responseModifications.headers
+    'kobra-renew-url',
+    'kobra-service-name',
+    'kobra-service-logo',
+    'kobra-theme-color',
+    'kobra-support-url',
   ];
 
   final Ref _ref;
@@ -371,6 +377,22 @@ class ProfileParser {
           }
           if (headers['support-url'] case final String profileSupportUrl when isUrl(profileSupportUrl)) {
             subInfo = subInfo.copyWith(supportUrl: profileSupportUrl);
+          }
+          // KOBRA: parse custom headers from Remnawave responseModifications.headers
+          if (headers['kobra-renew-url'] case final String renewUrl when isUrl(renewUrl)) {
+            subInfo = subInfo.copyWith(renewUrl: renewUrl);
+          }
+          if (headers['kobra-support-url'] case final String kobraSupportUrl when isUrl(kobraSupportUrl)) {
+            subInfo = subInfo.copyWith(supportUrl: kobraSupportUrl);
+          }
+          if (headers['kobra-service-name'] case final String serviceName when serviceName.isNotEmpty) {
+            subInfo = subInfo.copyWith(serviceName: serviceName);
+          }
+          if (headers['kobra-service-logo'] case final String serviceLogoUrl when isUrl(serviceLogoUrl)) {
+            subInfo = subInfo.copyWith(serviceLogoUrl: serviceLogoUrl);
+          }
+          if (headers['kobra-theme-color'] case final String themeColor when themeColor.isNotEmpty) {
+            subInfo = subInfo.copyWith(themeColor: themeColor);
           }
         }
 
